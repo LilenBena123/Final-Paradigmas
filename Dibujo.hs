@@ -1,3 +1,4 @@
+
 module Dibujo (
   Dibujo(..),
   comp,
@@ -118,7 +119,7 @@ ciclar d = cuarteto d (r90 d) (r180 d) (r270 d)
 
 -- map para nuestro lenguaje.
 mapDib :: (a -> b) -> Dibujo a -> Dibujo b
-mapDib f = foldDib (pureDib . f) rotar rot45 espejar apilar juntar encimar
+mapDib f = foldDib (pureDib . f) rotar rot45 espejar juntar apilar encimar
 
 -- Funcion de fold para Dibujos a
 foldDib :: (a -> b) -> (b -> b) -> (b -> b) -> (b -> b) ->
@@ -143,12 +144,6 @@ contar_basica (Espejar d1) = contar_basica d1
 contar_basica (Apilar i j d1 d2) = contar_basica d1 + contar_basica d2
 contar_basica (Juntar i j d1 d2) = contar_basica d1 + contar_basica d2
 contar_basica (Encimar d1 d2) = contar_basica d1 + contar_basica d2
-
-{-
-contar_basica2:: Dibujo a -> Int
-contar_basica2 d = foldDib (\x -> 1) (\x->x) (\x->x)  (\x->x) (\i j x y -> x+y) (\ i j x y -> x+y) (\x y -> x+y) d
--}
-
 
 
 --Pequeño comentario sobre como funcionan mapDib y foldDib
@@ -175,4 +170,3 @@ contar_basica2 d = foldDib (\x -> 1) (\x->x) (\x->x)  (\x->x) (\i j x y -> x+y) 
   Retorna:
     value :: b
 -}
-
