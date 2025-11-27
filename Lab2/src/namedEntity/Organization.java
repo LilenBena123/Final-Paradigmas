@@ -1,8 +1,6 @@
-
 package namedEntity;
 
 import namedEntity.topic.Topic;
-
 
 public class Organization extends NamedEntity{
     int ingresos;
@@ -35,9 +33,4 @@ public class Organization extends NamedEntity{
                 getTopic()
 			    );
     }
-}
-
-@Override
-public String getEntityType(){
-    return "Organizacion";
 }
