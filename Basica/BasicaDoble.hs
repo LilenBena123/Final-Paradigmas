@@ -6,7 +6,7 @@ import Basica.Comun
 data Basica = Triangulo | TrainguloVioleta
 
 ejemplo :: Dibujo Basica
-ejemplo = Apilar 1 1 (Figura Triangulo) (Rotar (Figura TrainguloVioleta))
+ejemplo = Apilar 1 1 (pureDib Triangulo) (Rotar (pureDib TrainguloVioleta))
 
 interpBas :: Basica -> ImagenFlotante
 interpBas Triangulo = triangulo

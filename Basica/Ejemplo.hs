@@ -6,7 +6,7 @@ import Basica.Comun
 type Basica = ()
 
 ejemplo :: Dibujo Basica
-ejemplo = Espejar(Basica ())
+ejemplo = Espejar(pureDib())
 
 interpBas :: Basica -> ImagenFlotante
 interpBas () = formaF
